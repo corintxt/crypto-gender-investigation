@@ -50,13 +50,30 @@ def build_contribution_list(contribution_response):
         ctr["repo"] = contribution_response['name']
         ctr["username"] = contribution_response['data'][i]['login']
         ctr["contributions"] = contribution_response['data'][i]['contributions']
+        ctr["avatar_url"] = contribution_response['data'][i]['avatar_url']
+        ctr["profile_url"] = contribution_response['data'][i]['url']
         all_repo_contributions.append(ctr)
     
     return all_repo_contributions
 
 
-all_org_contributions = list()
+def lookup_human_name(profile_url):
+    # restate headers in case I need to change
+    lookup_headers = {'Content-Type': 'application/json',
+           'User-Agent': 'python-requests/3.6.1',
+           'Accept': 'application/vnd.github.v3+json'}
     
+    response = session.get(profile_url, headers=lookup_headers)
+
+    if response.status_code == 200:
+        return (response.json()['name'])
+    else:
+        print('[!] HTTP {0} looking up user [{1}]'.format(response.status_code, profile_url))
+        return None
+
+# define list variable outside of get_all_contributions function
+all_org_contributions = list()
+  
 def get_all_contributions(org):
     repos = get_repos(org)
 
@@ -64,3 +81,11 @@ def get_all_contributions(org):
         contributors = get_contributors(repo)
         contribution_list = build_contribution_list(contributors)
         all_org_contributions.append(contribution_list)
+
+    # new API call to add real names to dictionary
+    for i in range (0, len(all_org_contributions)):
+        for j in range (0, len(all_org_contributions[i])):
+            human_name = lookup_human_name(all_org_contributions[i][j]['profile_url'])
+            all_org_contributions[i][j]['name'] = human_name
+
+    print("Contribution list complete.")
