@@ -92,6 +92,7 @@ def get_all_contributions(org):
 
     # new API call to add real names to dictionary
     print("Matching real names against contributor usernames...")
+    
     for i in range (0, len(all_org_contributions)):
         print("Searching repo {} of {}".format(i,len(all_org_contributions)))
         for j in range (0, len(all_org_contributions[i])):
@@ -100,15 +101,13 @@ def get_all_contributions(org):
 
     print("Contribution list complete!")
 
-############
-
-## This part isn't in the right format
+## Write to file
     print("Writing to file.")
 
     file_name = "{}.csv".format(org)
     flat_contributions = [item for sublist in all_org_contributions for item in sublist]
     ## Do this row by row.
     for item in flat_contributions:
-        append_list_to_csv(item, file_name)
+        append_list_to_csv(item.values(), file_name)
 
     print("Contributor list saved as {}".format(file_name))
