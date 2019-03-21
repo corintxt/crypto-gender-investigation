@@ -111,3 +111,7 @@ def get_all_contributions(org):
         append_list_to_csv(item.values(), file_name)
 
     print("Contributor list saved as {}".format(file_name))
+
+if __name__ == '__main__':
+    target_repo = input('Enter name of org to scrape: > ')
+    get_all_contributions(target_repo)
