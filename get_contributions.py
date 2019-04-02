@@ -104,7 +104,7 @@ def get_all_contributions(org):
 ## Write to file
     print("Writing to file.")
 
-    file_name = "{}.csv".format(org)
+    file_name = "./data/{}.csv".format(org)
     flat_contributions = [item for sublist in all_org_contributions for item in sublist]
     ## Do this row by row.
     for item in flat_contributions:

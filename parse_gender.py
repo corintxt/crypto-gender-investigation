@@ -40,4 +40,4 @@ def lookup_genders(csv, output):
 
 if __name__ == '__main__':
     target_csv = str(input('Enter csv file to genderize: > '))
-    lookup_genders(target_csv, '/gendered/{}'.format(target_csv))
+    lookup_genders(target_csv, './gendered/{}'.format(target_csv))
