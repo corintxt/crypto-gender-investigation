@@ -2,6 +2,7 @@ import json
 import requests
 import csv
 import config
+import time
 
 session = requests.session()
 ## Comment out Tor proxy for now.
@@ -42,6 +43,13 @@ def get_contributors(repo):
             {'name': name,
              'data': response.json()}
         )
+    elif response.status_code == 202:
+        print("Response 202: Accepted/Waiting")
+        time.sleep(1)
+        return (
+            {'name': name,
+             'data': response.json()}
+        )
     else:
         print('[!] HTTP {0} calling repo [{1}]'.format(response.status_code, path))
         return None
@@ -50,6 +58,7 @@ def get_contributors(repo):
 def build_contributor_list(contribution_response):
     all_repo_contributions = list()
     
+    # This will throw a TypeError if ['data'] is empty
     for i in range(0,len(contribution_response['data'])):
         ctr = dict()
         ctr["repo"] = contribution_response['name']

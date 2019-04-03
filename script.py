@@ -1,6 +1,6 @@
 import pandas as pd
 
-from get_contributions import get_all_contributions
+from get_collaborators import get_all_contributions
 import parse_gender
 
 
@@ -9,11 +9,15 @@ organizations = pd.read_csv(
     )
 
 for org in organizations['github_org']:
-    print("""****SCRAPING:***** 
-    {}
-*********************""".format(org))
+    if type(org) == str: 
+        print("""****SCRAPING:***** 
+        {}
+    *********************""".format(org))
 
-    get_all_contributions(org)
+        get_all_contributions(org)
+    else:
+        continue
+        # skip over organizations with no github_org listed
 
 print("SCRIPT COMPLETE.")
 
