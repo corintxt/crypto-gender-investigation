@@ -3,4 +3,5 @@ __pycache__
 data/
 gendered/
 .ipynb_checkpoints
+*.ipynb
 *.ods
