@@ -50,9 +50,15 @@ def get_contributors(repo):
             {'name': name,
              'data': response.json()}
         )
+    elif response.status_code == 204:
+        print("Response 204: No data in repo {}".format(path))
+        return None
     else:
         print('[!] HTTP {0} calling repo [{1}]'.format(response.status_code, path))
-        return None
+        time.sleep(1)
+        print("Re-attempting...")
+        get_contributors(repo)
+        # return None // currently this creates a loop
 
 
 def build_contributor_list(contribution_response):
@@ -96,8 +102,11 @@ def get_all_contributions(org):
     for repo in repos:
         print("Building contributor commit list for {}".format(repo['full_name']))
         contributors = get_contributors(repo)
-        contribution_list = build_contributor_list(contributors)
-        all_org_contributions.append(contribution_list)
+        if contributors:
+            contribution_list = build_contributor_list(contributors)
+            all_org_contributions.append(contribution_list)
+        else:
+            continue
 
     # new API call to add real names to dictionary
     print("Matching real names against contributor usernames...")
