@@ -3,9 +3,10 @@ import requests
 import csv
 import config
 import time
+import datetime
 
 session = requests.session()
-## Comment out Tor proxy for now.
+## Uncomment for Tor proxy.
 # session.proxies = {}
 # session.proxies['http'] = 'socks5h://localhost:9050'
 # session.proxies['https'] = 'socks5h://localhost:9050'
@@ -82,6 +83,12 @@ def lookup_human_name(profile_url):
 
     if response.status_code == 200:
         return (response.json()['name'])
+    elif response.status_code == 403:
+        print("Response 403: Forbidden")
+        currentDT = datetime.datetime.now()
+        print("Scraping stopped at {}".format(currentDT))
+        print("Try again in one hour")
+        quit()
     else:
         print('[!] HTTP {0} looking up user [{1}]'.format(response.status_code, profile_url))
         return None

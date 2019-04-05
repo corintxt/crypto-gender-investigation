@@ -7,6 +7,8 @@ Step 2: Give gender scraper a directory to look in where CSVs are stored
 
 TO-DO: need to put in control flow, so that I can make keyboard interrupts without needing to start the whole thing again.
 
+* Also: some projects are set up as users (Monero) not orgs. 
+
 ---
 
 * As [GitHub notes](https://help.github.com/en/articles/viewing-contribution-activity-in-a-repository), you can only access the top 100 contributors to a repo. For most cryptocurrency projects this is all contributors, but for some (e.g. bitcoin with 600) it is only a fraction.
