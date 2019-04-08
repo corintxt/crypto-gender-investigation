@@ -8,18 +8,21 @@ organizations = pd.read_csv(
     input('Enter input csv file: > ')
     )
 
+
 for index, org in organizations.iterrows():
     github_org = org['github_org']
     
-    if type(github_org) == str and str(org['scraped']).lower() != 'y':
-        print("""****SCRAPING:***** 
-        {}
-    *********************""".format(github_org))
-
-        get_all_contributions(github_org)
-    else:
-        continue
-        # skip over organizations with no github_org listed
+    # current list of values to ignore
+    scraped_values = ['y','n']
+    
+    if type(github_org) == str:
+        if str(org['scraped']).lower() in scraped_values:
+            continue
+        else:
+            print("****SCRAPING:*****")
+            print('    {}'.format(github_org))
+            print('*******************')
+            get_all_contributions(github_org)
 
 print("SCRIPT COMPLETE.")
 
