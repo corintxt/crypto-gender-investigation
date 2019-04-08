@@ -36,18 +36,18 @@ Dentacoin,Dentacoin,y,
 Basic Attention Token,,,Sub-project of Brave browser: https://github.com/brave-intl
 0x,0xProject,y,
 Qtum,qtumproject,y,
-Bitcoin Gold,BTCGPU,y,Problem with scraping so not saved as csv
+Bitcoin Gold,BTCGPU,n,Problem with scraping so not saved as csv
 ICON,icon-project,y,
 Holo,holochain,y,
-Steem,steemit,,
-DigiByte,digibyte,,
+Steem,steemit,y,
+DigiByte,digibyte,n,Set up as a user (digibyte) not an org
 Siacoin,,,https://github.com/NebulousLabs/Sia
-OmiseGO,omisego,,
-Bytom,Bytom,,
-IOST,iost-official,,
-Waves,wavesplatform,,
-ReddCoin,reddcoin-project,,
-BitShares,bitshares,,
+OmiseGO,omisego,y,
+Bytom,Bytom,y,
+IOST,iost-official,y,
+Waves,wavesplatform,y,
+ReddCoin,reddcoin-project,y,
+BitShares,bitshares,y,
 Bitcoin Diamond,,,https://github.com/eveybcd/BitcoinDiamond
 NULS,nuls-io,,
 Komodo,KomodoPlatform,,
