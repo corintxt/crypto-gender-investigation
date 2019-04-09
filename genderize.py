@@ -18,3 +18,5 @@ for file in os.listdir(directory):
          continue
 
 print("GENDER INFERENCE COMPLETE.")
+
+# Note - might need to add timeout to not reach API limit

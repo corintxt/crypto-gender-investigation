@@ -65,15 +65,19 @@ def get_contributors(repo):
 def build_contributor_list(contribution_response):
     all_repo_contributions = list()
     
-    # This will throw a TypeError if ['data'] is empty
+    # TypeError returned if ['data'] is empty for a given repo
     for i in range(0,len(contribution_response['data'])):
         ctr = dict()
         ctr["repo"] = contribution_response['name']
-        ctr["username"] = contribution_response['data'][i]['author']['login']
-        ctr["contributions"] = contribution_response['data'][i]['total']
-        ctr["avatar_url"] = contribution_response['data'][i]['author']['avatar_url']
-        ctr["profile_url"] = contribution_response['data'][i]['author']['url']
-        all_repo_contributions.append(ctr)
+        try:
+            ctr["username"] = contribution_response['data'][i]['author']['login']
+            ctr["contributions"] = contribution_response['data'][i]['total']
+            ctr["avatar_url"] = contribution_response['data'][i]['author']['avatar_url']
+            ctr["profile_url"] = contribution_response['data'][i]['author']['url']
+        except TypeError:
+            print("Repo did not return contributor data. Skipping.")
+        else:
+            all_repo_contributions.append(ctr)
     
     return all_repo_contributions
 

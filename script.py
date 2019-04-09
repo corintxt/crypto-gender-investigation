@@ -25,10 +25,3 @@ for index, org in organizations.iterrows():
             get_all_contributions(github_org)
 
 print("SCRIPT COMPLETE.")
-
-# Next run gender lookup on all csvs =>
-# input will be the folder with all CSVs.
-# then:
-    # for file in csv_files:
-    #   lookup_genders(file, './gendered/{}'.format(file))
-    #   maybe also a timeout to not reach genderize API limit?
