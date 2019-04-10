@@ -1,12 +1,13 @@
 import requests
 import json
+import config
 import pandas as pd
 
 
 api_url_base = 'https://api.genderize.io/'
 
 def get_gender(firstname):
-    request_url = '{}?name={}'.format(api_url_base, firstname)
+    request_url = '{}?apikey={}&name={}'.format(api_url_base, config.genderize_key, firstname)
     response = requests.get(request_url)
     print("Genderizing name: {}".format(firstname))
     
