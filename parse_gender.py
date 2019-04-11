@@ -27,6 +27,8 @@ def lookup_genders(csv, output):
 
     for name in df['real_name'].unique():
         if type(name) == str: # don't call on NaN values (which are float)
+            if name[0].isspace():
+                name = name[1:]
             first_name = name.split(' ')[0]
             gender_result = get_gender(first_name)
             gender_result['real_name'] = name # add real name back to dictionary

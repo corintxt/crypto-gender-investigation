@@ -3,6 +3,7 @@
 ## Links
 * Women in crypto reluctant to admit there are few women in crypto. -[Quartz](https://qz.com/1262167/the-first-rule-of-being-a-woman-in-crypto-is-you-do-not-talk-about-being-a-woman-in-crypto/)
 "Women in the industry primarily hold roles in business development, marketing, and fundraising, rather than in coding and development."
+* A [woman is leading a team](https://www.wired.com/story/fight-over-specialized-chips-threatens-ethereum-split/) developing an ASIC-resistant mining algorithm for Ethereum
 * CoinDance - [Bitcoin community engagement by gender](https://coin.dance/stats/gender)
 
 -----
@@ -10,9 +11,13 @@
 ## Classification
 Various sites exist to classify names by gender. These include https://genderize.io/ and https://gender-api.com/.
 
+My analysis is limited by Genderize's database. They haven't made this available which makes it difficult to audit. Having manually checked results, there seems to be some evidence of bias towards (foreign names? unisex names?)
 
+* One type of analysis: can find the team with the most 'ambiguously gendered' team members, i.e. most people whose gender could only be inferred with low probability.
 
-
+When scraped:
+Monthly limit: 100.000
+Remaining names: 74.314
 
 
 Ultimately I want to assemble a CSV with a list of company names & GitHub org names, and tell the script to slowly run through it, getting all of the commit data, then parsing for gender.
