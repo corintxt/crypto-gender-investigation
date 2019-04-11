@@ -1,0 +1,22 @@
+organization,github_org,scraped,notes
+Cardano,,n,currency is just one project of many: https://github.com/input-output-hk/cardano-sl
+Huobi Token,,n,
+Chainlink,,n,https://github.com/smartcontractkit/chainlink
+Basic Attention Token,,n,Sub-project of Brave browser: https://github.com/brave-intl
+Siacoin,,n,https://github.com/NebulousLabs/Sia
+Bitcoin Diamond,,n,https://github.com/eveybcd/BitcoinDiamond
+Gas,,n,Also from Neo-Project
+Bytecoin,,n,https://github.com/bcndev/bytecoin
+Hxro,,n,
+Power Ledger,,n,
+Ardor,,n,
+Monero,monero-project,,Set up as a user (monero-project) not an org
+Bitcoin Gold,BTCGPU,,Problem with scraping so not saved as csv
+DigiByte,digibyte,,Set up as a user (digibyte) not an org
+NULS,nuls-io,,Set up as a user
+Waltonchain,WaltonChain,,Set up as a user
+QASH,qashcoin,,Set up as a user
+PCHAIN,pchain-org,,Set up as a user
+PIVX,PIVX-Project,,Set up as a user
+Dent,dentcoin,,Set up as a user
+Civic,civic,,Set up as a user

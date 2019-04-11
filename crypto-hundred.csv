@@ -6,7 +6,7 @@ Stellar,stellar,y,
 Eos,EOSIO,y,
 Litecoin,litecoin-project,y,
 Bitcoin Cash,Bitcoin-ABC,y,
-Cardano,,,currency is just one project of many: https://github.com/input-output-hk/cardano-sl
+Cardano,,n,currency is just one project of many: https://github.com/input-output-hk/cardano-sl
 Grin,mimblewimble,y,
 TRON,tronprotocol,y,
 Digital Cash,dashpay,y,
@@ -14,9 +14,9 @@ Binance Coin,binance-exchange,y,
 Bitoin Cash SV,bitcoin-sv,y,
 Tezos,tezos,y,
 Ontology,ontio,y,
-Monero,,,Set up as a user (monero-project) not an org
+Monero,,n,Set up as a user (monero-project) not an org
 Zcash,zcash,y,
-Huobi Token,,,
+Huobi Token,,n,
 NEO,neo-project,y,
 Ravencoin,RavenProject,y,
 Ethereum Classic,ethereumclassic,y,
@@ -26,14 +26,14 @@ Maker,makerdao,y,
 MaidSafeCoin,maidsafe,y,
 VeChain,vechain,y,
 New Economy Movement,NemProject,y,
-Chainlink,,,https://github.com/smartcontractkit/chainlink
+Chainlink,,n,https://github.com/smartcontractkit/chainlink
 Decentraland,decentraland,y,
 Decred,decred,y,
 QuarkChain,QuarkChain,y,
 Lisk,LiskHQ,y,
 Zilliqa,Zilliqa,y,
 Dentacoin,Dentacoin,y,
-Basic Attention Token,,,Sub-project of Brave browser: https://github.com/brave-intl
+Basic Attention Token,,n,Sub-project of Brave browser: https://github.com/brave-intl
 0x,0xProject,y,
 Qtum,qtumproject,y,
 Bitcoin Gold,BTCGPU,n,Problem with scraping so not saved as csv
@@ -41,18 +41,18 @@ ICON,icon-project,y,
 Holo,holochain,y,
 Steem,steemit,y,
 DigiByte,digibyte,n,Set up as a user (digibyte) not an org
-Siacoin,,,https://github.com/NebulousLabs/Sia
+Siacoin,,n,https://github.com/NebulousLabs/Sia
 OmiseGO,omisego,y,
 Bytom,Bytom,y,
 IOST,iost-official,y,
 Waves,wavesplatform,y,
 ReddCoin,reddcoin-project,y,
 BitShares,bitshares,y,
-Bitcoin Diamond,,,https://github.com/eveybcd/BitcoinDiamond
+Bitcoin Diamond,,n,https://github.com/eveybcd/BitcoinDiamond
 NULS,nuls-io,n,Set up as a user
 Komodo,KomodoPlatform,y,
 Augur,AugurProject,y,
-Gas,,,Also from Neo-Project
+Gas,,n,Also from Neo-Project
 Status,status-im,y,
 aelf,AelfProject,y,
 Waltonchain,WaltonChain,n,Set up as a user
@@ -61,9 +61,9 @@ Aeternity,aeternity,y,
 ZCoin,zcoinofficial,y,
 KuCoin Shares,Kucoin,y,
 Gnosis,gnosis,y,
-Bytecoin,,,https://github.com/bcndev/bytecoin
+Bytecoin,,n,https://github.com/bcndev/bytecoin
 Horizen,ZencashOfficial,y,
-Hxro,,,
+Hxro,,n,
 QASH,qashcoin,n,Set up as a user
 PCHAIN,pchain-org,n,Set up as a user
 Enjin Coin,enjin,y,
@@ -74,7 +74,7 @@ Storj,storj,y,
 Revain,Revain,y,
 Elastos,elastos,y,
 Stratis,stratisproject,y,
-Power Ledger,,,
+Power Ledger,,n,
 Nebulas,nebulasio,y,
 WAX,waxio,y,
 IoTeX,iotexproject,y,
@@ -90,7 +90,7 @@ Wanchain,wanchain,y,
 Dent,dentcoin,n,Set up as a user
 Enigma,enigmampc,y,
 Civic,civic,n,Set up as a user
-Ardor,,,
+Ardor,,n,
 Populous,bitpopulous,y,
 Ark,ArkEcosystem,y,
 Nexo,nexofinance,y,
