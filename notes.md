@@ -8,6 +8,13 @@
 
 -----
 
+## Process
+
+* We took the top 100 projects by market cap (Y2050?) as present on OnChainFX on April 3 2019.
+* Not all of these projects put code in a public repo. Also, for a few projects the coin is just one part of a much bigger project (E.g. BAT as a project of Brave; Sia as a project of Nebulous Labs; Cardano as a project of ?). We discarded these projects and pulled more projects from the list until the total sample size was 100.
+
+
+
 ## Classification
 Various sites exist to classify names by gender. These include https://genderize.io/ and https://gender-api.com/.
 

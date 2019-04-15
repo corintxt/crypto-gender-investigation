@@ -1,6 +1,6 @@
 import pandas as pd
 
-from get_collaborators import get_all_contributions
+from get_user_collaborators import get_all_contributions
 import parse_gender
 
 

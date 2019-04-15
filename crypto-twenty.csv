@@ -10,13 +10,13 @@ Bytecoin,,n,https://github.com/bcndev/bytecoin
 Hxro,,n,
 Power Ledger,,n,
 Ardor,,n,
-Monero,monero-project,,Set up as a user (monero-project) not an org
-Bitcoin Gold,BTCGPU,,Problem with scraping so not saved as csv
-DigiByte,digibyte,,Set up as a user (digibyte) not an org
-NULS,nuls-io,,Set up as a user
-Waltonchain,WaltonChain,,Set up as a user
-QASH,qashcoin,,Set up as a user
-PCHAIN,pchain-org,,Set up as a user
-PIVX,PIVX-Project,,Set up as a user
-Dent,dentcoin,,Set up as a user
-Civic,civic,,Set up as a user
+Monero,monero-project,y,Set up as a user (monero-project) not an org
+Bitcoin Gold,BTCGPU,y,Problem with scraping so not saved as csv
+DigiByte,digibyte,y,Set up as a user (digibyte) not an org
+NULS,nuls-io,y,Set up as a user
+Waltonchain,WaltonChain,y,Set up as a user
+QASH,qashcoin,y,Set up as a user
+PCHAIN,pchain-org,y,Set up as a user
+PIVX,PIVX-Project,y,Set up as a user
+Dent,dentcoin,y,Set up as a user
+Civic,civic,y,Set up as a user
