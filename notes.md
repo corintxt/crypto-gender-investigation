@@ -47,3 +47,4 @@ TO-DO: need to put in control flow, so that I can make keyboard interrupts witho
 * The repositories scraped don't necessarily represent the entire codebase of the proejcts. Some projcects (like EOS) only put a subset of open source elements on their public GitHub.
 * [Ars Technica](https://arstechnica.com/information-technology/2016/02/data-analysis-of-github-contributions-reveals-unexpected-gender-bias/) - Women more likely to have commits accepted.
 * [WIRED](https://www.wired.com/2017/06/diversity-open-source-even-worse-tech-overall/) - Diversity in open source worse than in tech overall. 
+* [Github open source survey](https://opensourcesurvey.org/2017/)
