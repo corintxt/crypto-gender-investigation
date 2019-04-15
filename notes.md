@@ -12,6 +12,7 @@
 
 * We took the top 100 projects by market cap (Y2050?) as present on OnChainFX on April 3 2019.
 * Not all of these projects put code in a public repo. Also, for a few projects the coin is just one part of a much bigger project (E.g. BAT as a project of Brave; Sia as a project of Nebulous Labs; Cardano as a project of ?). We discarded these projects and pulled more projects from the list until the total sample size was 100.
+* I also discarded projects which were run by just a single user, or hosted under a personal GitHub account.
 
 
 
@@ -39,6 +40,10 @@ TO-DO: need to put in control flow, so that I can make keyboard interrupts witho
 * Also: some projects are set up as users (Monero) not orgs. 
 
 ---
+## References
+
 
 * As [GitHub notes](https://help.github.com/en/articles/viewing-contribution-activity-in-a-repository), you can only access the top 100 contributors to a repo. For most cryptocurrency projects this is all contributors, but for some (e.g. bitcoin with 600) it is only a fraction.
 * The repositories scraped don't necessarily represent the entire codebase of the proejcts. Some projcects (like EOS) only put a subset of open source elements on their public GitHub.
+* [Ars Technica](https://arstechnica.com/information-technology/2016/02/data-analysis-of-github-contributions-reveals-unexpected-gender-bias/) - Women more likely to have commits accepted.
+* [WIRED](https://www.wired.com/2017/06/diversity-open-source-even-worse-tech-overall/) - Diversity in open source worse than in tech overall. 
