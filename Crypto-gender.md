@@ -38,6 +38,8 @@ We then merged the dataset of genderized names with the dataset of usernames and
 
 => Run the test script again with a test csv input file to double check results—why are the number of commits so low for some of the projects (compared to total number of commits listed when visiting the repo homepage?)
 
+=> `202` response code means the data for this repo is not cached. This means data from the repo is not returned. That means we should run the script again for this repo. In actual fact, when we get a 202 response we need to wait and query again until we get 200. (e.g. **Bancor**)
+
 
 
 ---

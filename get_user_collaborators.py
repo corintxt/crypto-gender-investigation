@@ -46,7 +46,8 @@ def get_contributors(repo):
         )
     elif response.status_code == 202:
         print("Response 202: Accepted/Waiting")
-        time.sleep(1)
+        time.sleep(1) 
+        ## HERE WE SHOULD CALL THE FUNCTION RECURSIVELY TIL WE GET 200.
         return (
             {'name': name,
              'data': response.json()}
@@ -106,7 +107,7 @@ def append_list_to_csv(mylist, output_file):
 # define list variable outside of get_all_contributions function
 all_org_contributions = list()
   
-def get_all_contributions(org):
+def get_user_org_contributions(org):
     print("Retrieving list of all repos for {}".format(org))
     repos = get_repos(org)
 

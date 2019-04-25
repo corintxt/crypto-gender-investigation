@@ -1,6 +1,8 @@
 import pandas as pd
 
 from get_collaborators import get_all_contributions
+from get_user_collaborators import get_user_org_contributions
+import org_user_test
 import parse_gender
 
 
@@ -22,6 +24,9 @@ for index, org in organizations.iterrows():
             print("****SCRAPING:*****")
             print('    {}'.format(github_org))
             print('*******************')
-            get_all_contributions(github_org)
+            if org_user_test.test_org_user(github_org): #test if user or org
+                get_all_contributions(github_org)
+            else:
+                get_user_org_contributions(github_org)
 
 print("SCRIPT COMPLETE.")
