@@ -2,6 +2,7 @@ config.py
 __pycache__
 data/processed/
 gendered/
+images/
 .ipynb_checkpoints
 *.ipynb
 *.ods
