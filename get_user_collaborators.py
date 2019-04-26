@@ -46,12 +46,9 @@ def get_contributors(repo):
         )
     elif response.status_code == 202:
         print("Response 202: Accepted/Waiting")
-        time.sleep(1) 
-        ## HERE WE SHOULD CALL THE FUNCTION RECURSIVELY TIL WE GET 200.
-        return (
-            {'name': name,
-             'data': response.json()}
-        )
+        time.sleep(2)
+        print("Re-attempting...")
+        get_contributors(repo)
     elif response.status_code == 204:
         print("Response 204: No data in repo {}".format(path))
         return None

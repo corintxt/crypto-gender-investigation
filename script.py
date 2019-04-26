@@ -5,10 +5,9 @@ from get_user_collaborators import get_user_org_contributions
 import org_user_test
 import parse_gender
 
+csv_file = input('Enter input csv file: > ')
 
-organizations = pd.read_csv(
-    input('Enter input csv file: > ')
-    )
+organizations = pd.read_csv(csv_file)
 
 
 for index, org in organizations.iterrows():
@@ -28,5 +27,9 @@ for index, org in organizations.iterrows():
                 get_all_contributions(github_org)
             else:
                 get_user_org_contributions(github_org)
+        print("Updating input csv")
+        organizations.loc[index, 'scraped'] = 'y'
+
+    organizations.to_csv(csv_file, header=True, index=False)
 
 print("SCRIPT COMPLETE.")
