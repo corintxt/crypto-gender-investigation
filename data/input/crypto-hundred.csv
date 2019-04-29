@@ -1,10 +1,10 @@
 organization,github_org,scraped,notes
 Bitcoin,bitcoin,y,
-Ripple,ripple,,
-Ethereum,ethereum,,
-Stellar,stellar,,
-Eos,EOSIO,,
-Litecoin,litecoin-project,,
+Ripple,ripple,y,
+Ethereum,ethereum,y,
+Stellar,stellar,y,
+Eos,EOSIO,y,
+Litecoin,litecoin-project,y,
 Bitcoin Cash,Bitcoin-ABC,,
 Cardano,,n,currency is just one project of many: https://github.com/input-output-hk/cardano-sl
 Grin,mimblewimble,,

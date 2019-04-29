@@ -65,7 +65,7 @@ def get_contributors(repo):
         print("Response 202: Accepted/Generating data")
         return {'retry': True}
     elif response.status_code == 204:
-        print("Response 204: No data in repo {}".format(path))
+        print("!> Response 204: No data in repo {}".format(path))
         return {'retry': False,
                 'empty': True}
     else:
@@ -116,10 +116,10 @@ def append_list_to_csv(mylist, output_file):
         wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
         wr.writerow(mylist)
 
-# define list variable outside of get_all_contributions function
-all_org_contributions = list()
   
 def get_user_org_contributions(org):
+    all_org_contributions = list()
+
     print("Retrieving list of source repos for {}".format(org))
     repos = get_repos(org)
     print("Found {} repos".format(len(repos)))
@@ -148,7 +148,7 @@ def get_user_org_contributions(org):
     print("Matching real names against contributor usernames...")
     
     for i in range (0, len(all_org_contributions)):
-        print("Searching repo {} of {}".format(i,len(all_org_contributions)))
+        print("Searching repo {} of {}".format(i+1,len(all_org_contributions)))
         for j in range (0, len(all_org_contributions[i])):
             human_name = lookup_human_name(all_org_contributions[i][j]['profile_url'])
             all_org_contributions[i][j]['name'] = human_name

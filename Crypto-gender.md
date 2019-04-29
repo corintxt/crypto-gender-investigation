@@ -34,7 +34,9 @@ We then merged the dataset of genderized names with the dataset of usernames and
 
 ### Limitations of GitHub API
 
-**CHECK: ** Using this method, we obtain data about the top 100 contributors to the `master` branch of each repo.
+**CHECK: ** Using this method, we obtain data about the top 100 contributors to the `master` branch of each repo. This is all GitHub's API will return. Most projects have fewer than 100 contributors. (Could test how many)
+
+Also: why in some cases is a single repo owner not counted as a contributor?
 
 <https://github.com/bancorprotocol/contracts/graphs/contributors>
 
