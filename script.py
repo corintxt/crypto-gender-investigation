@@ -4,6 +4,7 @@ from get_collaborators import get_all_contributions
 from get_user_collaborators import get_user_org_contributions
 import org_user_test
 import parse_gender
+import time
 
 csv_file = input('Enter input csv file: > ')
 
@@ -34,7 +35,8 @@ for index, org in organizations.iterrows():
             organizations.loc[index, 'scraped'] = 'y'
 
         organizations.to_csv(csv_file, header=True, index=False)
-        # Set timeout here?
+        print("Pausing before next loop.")
+        time.sleep(30)
 
     except KeyboardInterrupt:
         break

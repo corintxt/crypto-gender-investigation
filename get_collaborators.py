@@ -26,10 +26,24 @@ def get_repos(orgname):
     response = session.get(api_url, headers=headers)
 
     if response.status_code == 200:
-        return (response.json())
+        if response.links:
+            return get_multipage_repo(api_url)
+        else:    
+            return (response.json())
     else:
         print('[!] HTTP {0} calling [{1}]'.format(response.status_code, api_url))
         return None
+
+
+def get_multipage_repo(org_url):
+    response = session.get(org_url, headers=headers)
+    
+    try:
+        session.get(response.links['next']['url'])
+    except KeyError:
+        return response.json()
+    else: 
+        return response.json() + get_multipage_repo(response.links['next']['url'])
 
 
 def get_contributors(repo):
