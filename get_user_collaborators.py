@@ -21,7 +21,7 @@ headers = {'Content-Type': 'application/json',
 
 # modified version for users
 def get_repos(orgname):
-    api_url = '{}users/{}/repos'.format(api_url_base, orgname)
+    api_url = '{}users/{}/repos?type=source'.format(api_url_base, orgname)
     # use session.get instead of request
     response = session.get(api_url, headers=headers)
 
@@ -39,25 +39,26 @@ def get_contributors(repo):
     response = session.get('{}repos/{}/stats/contributors'.format(api_url_base, path), headers=headers)
 
     if response.status_code == 200:
+        print("Response OK: returned {} records".format(len(response.json())))
         return (
             # returns `contribution_response`
-            {'name': name,
+            { 'retry': False,
+              'empty': False,
+              'name': name,
              'data': response.json()}
         )
     elif response.status_code == 202:
-        print("Response 202: Accepted/Waiting")
-        time.sleep(2)
-        print("Re-attempting...")
-        get_contributors(repo)
+        print("Response 202: Accepted/Generating data")
+        return {'retry': True}
     elif response.status_code == 204:
         print("Response 204: No data in repo {}".format(path))
-        return None
+        return {'retry': False,
+                'empty': True}
     else:
         print('[!] HTTP {0} calling repo [{1}]'.format(response.status_code, path))
         time.sleep(1)
         print("Re-attempting...")
         get_contributors(repo)
-        # return None // currently this creates a loop
 
 
 def build_contributor_list(contribution_response):
@@ -105,17 +106,29 @@ def append_list_to_csv(mylist, output_file):
 all_org_contributions = list()
   
 def get_user_org_contributions(org):
-    print("Retrieving list of all repos for {}".format(org))
+    print("Retrieving list of source repos for {}".format(org))
     repos = get_repos(org)
+    print("Found {} repos".format(len(repos)))
 
     for repo in repos:
         print("Building contributor commit list for {}".format(repo['full_name']))
-        contributors = get_contributors(repo)
-        if contributors:
-            contribution_list = build_contributor_list(contributors)
-            all_org_contributions.append(contribution_list)
-        else:
-            continue
+        
+        processing_loop = True
+
+        while processing_loop:
+            contributors = get_contributors(repo)
+            if contributors['retry']:
+                print("Waiting 10s to reattempt.")
+                time.sleep(10)
+                continue
+            elif contributors['empty']:
+                processing_loop = False
+                continue
+            else:    
+                contribution_list = build_contributor_list(contributors)
+                all_org_contributions.append(contribution_list)
+                processing_loop = False
+                continue
 
     # new API call to add real names to dictionary
     print("Matching real names against contributor usernames...")
@@ -131,7 +144,7 @@ def get_user_org_contributions(org):
 ## Write to file
     print("Writing to file.")
 
-    file_name = "./data/{}.csv".format(org)
+    file_name = "./data/commits/{}.csv".format(org)
     flat_contributions = [item for sublist in all_org_contributions for item in sublist]
     ## Do this row by row.
     for item in flat_contributions:
@@ -141,4 +154,4 @@ def get_user_org_contributions(org):
 
 if __name__ == '__main__':
     target_repo = input('Enter name of user to scrape: > ')
-    get_all_contributions(target_repo)
+    get_user_org_contributions(target_repo)

@@ -1,8 +1,10 @@
 config.py
 __pycache__
 data/processed/
+data/commits
 gendered/
 images/
+.vscode/
 .ipynb_checkpoints
 *.ipynb
 *.ods
