@@ -33,10 +33,11 @@ for index, org in organizations.iterrows():
                     get_user_org_contributions(github_org)
             print("Updating input csv")
             organizations.loc[index, 'scraped'] = 'y'
+            print("Pausing before next loop.")
+            time.sleep(30)
 
         organizations.to_csv(csv_file, header=True, index=False)
-        print("Pausing before next loop.")
-        time.sleep(30)
+        
 
     except KeyboardInterrupt:
         break

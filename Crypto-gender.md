@@ -18,7 +18,9 @@ Projects were discarded if too many of the organization's repositories were unre
 
 Using the [GitHub API](https://developer.github.com/v3/) and a custom Python script, we queried each of the 100 organizations to obtain a list of every repository belonging to the organization, and the number of commits made to each repository, by username. We then queried each account to obtain data for each user that had filled in the `name` field with a real name.
 
-=> Only source repos counted; forks ignored.
+*=> Only source repos counted; forks ignored.*
+
+*In some cases of old, low activity repos GitHub may not mention a few commits. - example: a [repo](https://github.com/dashpay/key_finder) listed as zero contributors.*
 
 ![]![corintxt-user-api](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/corintxt-user-api.png)
 

@@ -156,7 +156,7 @@ def get_all_contributions(org):
 
     print("Contribution list complete!")
 
-## Write to file
+    ## Write to file
     print("Writing to file.")
 
     file_name = "./data/commits/{}.csv".format(org)
@@ -166,6 +166,13 @@ def get_all_contributions(org):
         append_list_to_csv(item.values(), file_name)
 
     print("Contributor list saved as {}".format(file_name))
+
+    # Write log
+    logfile = open('data/log.txt', 'a')
+    logfile.write("Scraped {} repos from {} at {} \n".format(
+        len(all_org_contributions), org, datetime.datetime.now())
+        )
+    logfile.close()
 
 if __name__ == '__main__':
     target_repo = input('Enter name of org to scrape: > ')

@@ -8,3 +8,4 @@ images/
 .ipynb_checkpoints
 *.ipynb
 *.ods
+log.txt

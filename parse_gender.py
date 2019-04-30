@@ -19,9 +19,8 @@ def get_gender(firstname):
 
 
 def lookup_genders(csv, output):
-    df = pd.read_csv(csv)
-    df.columns = ['repo', 'username', 'contributions', 
-                'avatar_url', 'profile_url', 'real_name']
+    df = pd.read_csv(csv, names=['repo', 'username', 'contributions', 
+                'avatar_url', 'profile_url', 'real_name'])
 
     gender_list = list()
 

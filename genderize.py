@@ -1,7 +1,7 @@
 import os
 from parse_gender import lookup_genders
 
-target_directory = '/home/corin/Dropbox/CODE/RC/Crypto-Scraper/data/'
+target_directory = '/home/corin/Dropbox/CODE/RC/Crypto-Scraper/data/commits/'
 
 directory = os.fsencode(target_directory)
 
@@ -12,7 +12,7 @@ for file in os.listdir(directory):
         print(filename)
         print("~~~~~~~~~~~~~~~~~~")
         csv = target_directory + filename
-        lookup_genders(csv, './gendered/{}'.format(filename))
+        lookup_genders(csv, './data/gendered/{}'.format(filename))
         os.rename(csv, target_directory + "processed/" + filename)
      else:
          continue
