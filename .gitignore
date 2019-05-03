@@ -5,7 +5,7 @@ data/commits
 gendered/
 images/
 .vscode/
-.ipynb_checkpoints
+.ipynb_checkpoints/
 *.ipynb
 *.ods
 log.txt

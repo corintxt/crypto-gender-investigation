@@ -4,7 +4,7 @@
 * Women in crypto reluctant to admit there are few women in crypto. -[Quartz](https://qz.com/1262167/the-first-rule-of-being-a-woman-in-crypto-is-you-do-not-talk-about-being-a-woman-in-crypto/)
   "Women in the industry primarily hold roles in business development, marketing, and fundraising, rather than in coding and development."
 * A [woman is leading a team](https://www.wired.com/story/fight-over-specialized-chips-threatens-ethereum-split/) developing an ASIC-resistant mining algorithm for Ethereum
-* CoinDance - [Bitcoin community engagement by gender](https://coin.dance/stats/gender)
+* CoinDance - [Bitcoin community engagement by gender](https://coin.dance/stats/gender) // this gets quoted all the time but based on very little...
 * [Motherboard](https://motherboard.vice.com/en_us/article/8xz9yk/the-sexist-trolls-doubting-black-hole-researcher-katie-bouman-need-to-learn-to-code) - Trolls doubted how many code commits were made by the lead black hole researcher.
 * [AI Now study](http://fortune.com/2019/04/23/artificial-intelligence-diversity-crisis/) on gender in AI.
 
