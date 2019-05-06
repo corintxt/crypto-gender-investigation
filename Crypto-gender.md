@@ -8,7 +8,7 @@ Some limited statistics are available about the gender balance of major blockcha
 
 Anecdotally, developers working in the field have long maintained that the people actually writing the code are overwhelmingly male, but there's been little more than anecdotal evidence—until now.
 
-## A systemic problem
+### A systemic problem
 
 After decades of gender imbalance, many fields of technology are starting to have a reckoning with the fact that they skew disproportionately male.
 
@@ -16,7 +16,7 @@ After decades of gender imbalance, many fields of technology are starting to hav
 
 
 
-# Methodology
+## Methodology
 
 On April 3rd 2019, we used Messari's [OnChainFX dashboard](https://messari.io/onchainfx) to gather a list of the top 100 crypto projects by market cap. For these projects, we compiled a spreadsheet linking each project to the GitHub account where all of the repositories for the project code are hosted.
 
@@ -36,17 +36,17 @@ With a separate script, we queried each listed real name against a database main
 
 *Genderize documentation example*
 
-We then merged the dataset of genderized names with the dataset of usernames and commits, creating a new dataset [**LINK?**] of code commits with predicted gender grouped by organization, from which the conclusions in this article are drawn. 
+We then merged the dataset of genderized names with the dataset of usernames and commits, creating a new dataset [**LINK**] of code commits with predicted gender grouped by organization, from which the conclusions in this article are drawn. 
 
 Before examining the conclusions it should be noted that [gender is complicated](https://www.huffingtonpost.ca/2017/05/10/understanding-gender-identity_n_16542822.html): Having a name that is parsed as female does not equate to being a woman and vice versa. The male/female binary is itself a reductive way to examine gender, so these findings only give a fuzzy representation of the gender identity of blockchain developers.
 
 ## What we found
 
-In total we scraped data on 1,029,456 code commits across 100 projects. Of these, 692,741 were made by people with male-identified names, and only 48,289 were made by people with female-identified names. The remaining 288,426 commits were made by users who did not provide a real name, or (in a smaller number of cases) provided a name that could not be parsed as a given gender.
+In total we scraped data on 1,026,804 code commits across 100 projects. Of these, 691,134 were made by people with male-identified names, and only 47,678 were made by people with female-identified names. The remaining 287,992 commits were made by users who did not provide a real name, or (in a smaller number of cases) provided a name that could not be parsed as a given gender.
 
-This means that in total, GitHub users with female names account for **less than 5 percent** of the commits to the top 100 cryptocurrency priojects—**4.69 percent** to be exact.
+This means that in total, GitHub users with female names account for **less than 5 percent** of the commits to the top 100 cryptocurrency priojects—**4.64 percent** to be exact.
 
-GitHub users with male names make **67.3 percent** of the commits to the top 100 cryptocurrency projects, with the remaining **28 percent** made by developers of unknown gender.
+GitHub users with male names make **67.3 percent** of the commits to the top 100 cryptocurrency projects, with the remaining **28.05 percent** made by developers of unknown gender.
 
 ![gender_commits](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/gender_commits_1.png)
 
@@ -56,33 +56,43 @@ There was also a discrepancy in the average number of commits made by each of th
 
 #### From commits to users
 
-If we simply count the number of developers rather than the number of commits the picture is similar, but with a slightly smaller disparity between groups. Of the GitHub user accounts in the dataset, the breakdown is as follows:
+If we simply count the number of individual user accounts in the dataset rather than the number of commits the picture is similar, with **4.75** percent of the contributors having female-identified names. The main difference is in the number of developers whose gender could not be inferred, which rises to **37.9** percent.
+
+In most cases these developers had simply not provided information for the `name` field of their GitHub profile; in a smaller number of cases, developers entered a name of ambiguous gender, or for which gender could not be inferred.
 
 ***Contributors to the top 100 cryptocurrency projects:***
 
 | male-named | female-named | unknown | total|
 | ---- | ------ | ------- | ------- |
-| 5062 | 417    | 3313    |8792|
+| 4974 | 412   | 3290 |8676|
 
 ![user_gender](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/gender_usernames_1.png)
 
-As the chart above shows, developers of unknown gender now make up a higher proportion of the total. In most cases these developers had simply not provided information for the `name` field of their GitHub profile; in a smaller number of cases, developers entered a name of ambiguous gender, or for which gender could not be inferred.
+An open question is what we can assume about the gender of developers who choose not to enter a real name. Should we assume that the balance of men to women is 12:1, as in the gender-identified names, or might we speculate that in a male-dominated field, women are more likely to obscure their real name when contributing to a collaborative project?
 
-An open question is what we can assume about the gender of developers who choose not to enter a real name—for example, in a male-dominated field, are women more likely to obscure their real name to avoid discrimination?
+Ultimately, data from prior studies suggest that the gender of developers in the 'unknown' category is likely to align with the gender split that we have already shown. In the largest study, conducted by GitHub itself through interviews with 5,500 open source developers, [95 percent of contributors to open source projects were found to be male](https://www.wired.com/2017/06/diversity-open-source-even-worse-tech-overall/)—a figure in keeping with the data presented here. In light of this, making comparisons between identifiably male or female names while ignoring contributions in the 'unknown' category seems unlikely to introduce significant bias.
 
+## Individual projects
 
+The discrepancy in gender balance was consistent across projects with a few outliers—although these were generally due to large numbers of contributors without listed real names, rather than high levels of participation from female developers.
 
-As one study found, female-named developers were more likely to have contributions to open source project accepted. [LINK]
+By plotting the number of commits contributed by female-named developers against the number of commits by male-named developers on a chart, we can get a sense of how individual projects line up against one another. In the dataset as a whole, 53 projects incorporated fewer than 100 code commits from female-named developers, and 30 of these projects incorporated fewer than 10 code commits. (However, many of these projects had a high percentage of contributors whose gender could not be inferred.)
 
+![Fewer_than_10](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/<10.png)
 
+![Ten_to_hundred](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/10-100.png)
 
-### Individual projects
+In the group of projects with between 100 and 1,000 commits by female-named developers were a handful of projects like Bytom, Theta Token and [TK] that included more contributions from female-named developers than male.
 
-The discrepancy in gender balance is more or less consistent across projects, but with some outliers.
+[**MithrilJS is not the right project! should be <https://github.com/mithio>**]
 
-The project with the highest percentage of commits by female-named users was X.
+![Hundred_to_thousand](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/100-1000.png)
 
-The project with the worst gender imbalance was Y.
+=> Both these projects have lots of commits from women developers. Can we find out who? Is it a group, or one or two prolific women?
+
+![2000_plus](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/2000+.png)
+
+## Conclusions
 
 
 
