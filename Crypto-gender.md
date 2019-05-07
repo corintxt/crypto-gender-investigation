@@ -18,17 +18,17 @@ On April 3rd 2019, we used Messari's [OnChainFX dashboard](https://messari.io/on
 
 Projects were discarded if too many of the organization's repositories were unrelated to the core project—for example, Basic Attention Token is hosted on an account that also includes the codebase for Brave Browser. Whenever a project was discarded from the initial list of 100, a replacement was drawn from item 101 onwards on the OnChainFX list, maintaining the overall number.
 
-Using the GitHub API and a custom Python script, we queried each of the 100 organizations to obtain a list of every repository belonging to the organization, and then every developer who had made commits to the master branch of each repository, by username. Since many cryptocurrency projects start as forks of other projects e.g. Litecoin as a fork of Bitcoin, we used the `type=source`  parameter to omit forked repositories (without which, commits from a forked codebase would have been counted multiple times in the dataset).
+Using the GitHub API and a [custom Python script](https://github.com/corintxt/crypto-gender-investigation/blob/master/get_collaborators.py), we queried each of the 100 organizations to obtain a list of every repository belonging to the organization, and then every developer who had made commits to the master branch of each repository, by username. Since many cryptocurrency projects start as forks of other projects e.g. Litecoin as a fork of Bitcoin, we used the `type=source`  parameter to omit forked repositories (without which, commits from a forked codebase would have been counted multiple times in the dataset).
 
 We then queried each user account to find users who had filled in the `name` field with a real name, as shown below.
 
-![]![corintxt-user-api](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/corintxt-user-api.png)
+![]![corintxt-user-api](images/corintxt-user-api.png)
 
 *Response from an HTTP request querying the author's own GitHub account*
 
 With a separate script, we queried each real name against a database maintained by [Genderize.io](https://genderize.io/), a web service that attempts to determine the gender of a first name. For each name, Genderize returns a predicted gender along with a probability estimate that the inferred gender is correct.
 
-![genderize-api](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/genderize-api.png)
+![genderize-api](images/genderize-api.png)
 
 *Genderize API example*
 
@@ -44,11 +44,11 @@ In total, GitHub users with female names account for **less than 5 percent** of 
 
 GitHub users with male names make **67.3 percent** of the commits to the top 100 cryptocurrency projects, with the remaining **28.05 percent** made by developers of unknown gender.
 
-![gender_commits](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/gender_commits_1.png)
+![gender_commits](images/gender_commits_1.png)
 
 There was also a discrepancy in the average number of commits made by each of the three groups. Male-named developers in the dataset made thirteen more commits to each project than female-named developers on average, and ten more commits than developers of unknown gender.
 
-![average_commits](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/average_commits.png)
+![average_commits](images/average_commits.png)
 
 #### From commits to users
 
@@ -62,7 +62,7 @@ In most cases these developers had simply not provided information for the `name
 | ---- | ------ | ------- | ------- |
 | 4974 | 412   | 3290 |8676|
 
-![user_gender](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/gender_usernames_1.png)
+![user_gender](images/gender_usernames_1.png)
 
 ## Individual projects
 
@@ -70,13 +70,13 @@ The discrepancy in gender balance was consistent across projects with a few outl
 
 By plotting the number of commits contributed by female-named developers against the number of commits by male-named developers on a chart, we can get a sense of how individual projects line up against one another. In the dataset as a whole, **54** projects incorporated fewer than 100 code commits from female-named developers, and **31** of these projects incorporated fewer than 10 code commits. Organizations in the lower right corner of the chart have a proportionally higher ratio of female:male code contributions, while those near the top left are particularly male dominated.
 
-![Fewer_than_10](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/<10.png)
+![Fewer_than_10](images/<10.png)
 
-![Ten_to_hundred](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/10-100.png)
+![Ten_to_hundred](images/10-100.png)
 
-![Hundred_to_thousand](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/100-1000.png)
+![Hundred_to_thousand](images/100-1000.png)
 
-![Hundred_to_thousand](/home/corin/Dropbox/CODE/RC/Crypto-Scraper/images/1000-2000.png)
+![Hundred_to_thousand](images/1000-2000.png)
 
 The charts also identify certain projects that appear to have more contributions from female-named developers than male-named developers, such as Bytom, VeChain, Neo and Theta Token. 
 
