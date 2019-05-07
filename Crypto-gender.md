@@ -32,7 +32,7 @@ With a separate script, we queried each real name against a database maintained 
 
 *Genderize API example*
 
-We then merged the dataset of genderized names with the dataset of usernames and commits, creating a new dataset [INCLUDE DOWNLOAD LINK] of code commits with predicted gender grouped by organization, from which the conclusions in this article are drawn. 
+We then merged the dataset of genderized names with the dataset of usernames and commits, creating a new dataset of code commits with predicted gender grouped by organization, from which the conclusions in this article are drawn.
 
 Before examining the conclusions it should be noted that [gender is complicated](https://www.huffingtonpost.ca/2017/05/10/understanding-gender-identity_n_16542822.html): Having a name that is parsed as female does not equate to being a woman and vice versa. Increasingly the male/female binary is seen as a reductive way to examine gender, so these findings only give a rough proxy for the gender identity of blockchain developers.
 
